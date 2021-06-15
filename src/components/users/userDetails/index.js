@@ -1,6 +1,7 @@
-import { useLocation } from "react-router-dom";
+import { Redirect, useLocation } from "react-router-dom";
 import { useMutation } from "@apollo/client";
 import { DELETE_USER, USERS } from "../gql";
+import { useState } from "react";
 
 const UserDetails = () => {
   const { state } = useLocation();
@@ -12,6 +13,9 @@ const UserDetails = () => {
       },
     ],
   });
+  const [shouldRedirect, setShouldRedirect] = useState(false);
+
+  if (shouldRedirect) return <Redirect to={"/users"} />;
   return (
     <>
       <div className="user-details">
@@ -23,12 +27,16 @@ const UserDetails = () => {
           onClick={() => {
             deleteUser({
               variables: { where: { id: { _eq: state.id } } },
+            }).then(() => {
+              setTimeout(() => {
+                setShouldRedirect(true);
+              }, [3000]);
             });
           }}
           loading={loading}
           disabled={loading}
         >
-          Delete this user
+          {loading ? "Loading" : "Delete this user"}
         </button>
       </div>
     </>

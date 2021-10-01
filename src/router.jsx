@@ -1,8 +1,8 @@
 import { Switch, Route } from "react-router-dom";
-import Company from "components/company";
-import Home from "components/home";
-import Users from "components/users";
-import UserDetails from "components/users/userDetails";
+import Company from "components/Company";
+import Home from "components/Home";
+import Users from "components/users/Listing";
+import UserDetails from "components/users/Details";
 
 const Pages = () => {
   return (

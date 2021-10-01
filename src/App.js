@@ -1,6 +1,6 @@
 import { ApolloProvider } from "@apollo/client";
 import { client } from "graphql/apolloClient";
-import Pages from "./pages";
+import Pages from "./router";
 import { BrowserRouter as Router } from "react-router-dom";
 import "./main.scss";
 

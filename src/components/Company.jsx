@@ -1,6 +1,12 @@
 import { Link } from "react-router-dom";
+import { GET_COMPANY } from "graphql/queries";
+import { useQuery } from "@apollo/client";
 
-const Company = ({ company, loading }) => {
+const Company = () => {
+  const { data, loading, error } = useQuery(GET_COMPANY, {
+    fetchPolicy: "cache-first",
+  });
+  let company = data?.company;
   return (
     <>
       {loading ? (

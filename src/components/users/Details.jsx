@@ -25,16 +25,14 @@ const UserDetails = () => {
   }, []);
   if (shouldRedirect) return <Redirect to={"/users"} />;
   return (
-    <>
-      <div className="user-details">
-        {Object.keys(state).map((item) => {
-          return <h4>{`${item.toUpperCase()}: ${state[item]}`}</h4>;
-        })}
-        <button onClick={handleDeleteUser} loading={loading} disabled={loading}>
-          {loading ? "Loading" : "Delete this user"}
-        </button>
-      </div>
-    </>
+    <div className="user-details">
+      {Object.keys(state).map((item) => {
+        return <h4>{`${item.toUpperCase()}: ${state[item]}`}</h4>;
+      })}
+      <button onClick={handleDeleteUser} loading={loading} disabled={loading}>
+        {loading ? "Loading" : "Delete this user"}
+      </button>
+    </div>
   );
 };
 

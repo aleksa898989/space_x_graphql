@@ -6,14 +6,12 @@ import UserDetails from "components/users/Details";
 
 const Pages = () => {
   return (
-    <>
-      <Switch>
-        <Route path={"/"} exact component={Home} />
-        <Route path={"/company"} exact component={Company} />
-        <Route path={"/users"} exact component={Users} />
-        <Route path={"/user-details"} exact component={UserDetails} />
-      </Switch>
-    </>
+    <Switch>
+      <Route path={"/"} exact component={Home} />
+      <Route path={"/company"} exact component={Company} />
+      <Route path={"/users"} exact component={Users} />
+      <Route path={"/user-details"} exact component={UserDetails} />
+    </Switch>
   );
 };
 

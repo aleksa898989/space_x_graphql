@@ -6,6 +6,7 @@ const Users = () => {
   const { data, loading, error } = useQuery(USERS, {
     fetchPolicy: "cache-first",
   });
+
   let users = data?.users;
   if (error) return `${error}`;
 

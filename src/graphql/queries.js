@@ -13,6 +13,7 @@ export const GET_COMPANY = gql`
     }
   }
 `;
+
 export const USERS = gql`
   query {
     users {

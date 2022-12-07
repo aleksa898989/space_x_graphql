@@ -6,7 +6,8 @@ const Company = () => {
   const { data, loading, error } = useQuery(GET_COMPANY, {
     fetchPolicy: "cache-first",
   });
-  let company = data?.company;
+  const company = data?.company;
+
   if (error) return `${error}`;
 
   return loading ? (
